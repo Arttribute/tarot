@@ -1,4 +1,6 @@
 "use client";
+import React from 'react'
+import Play from '../app/play/page';
 import { Avatar } from "@coinbase/onchainkit/identity";
 import { ConnectAccount } from "@coinbase/onchainkit/wallet";
 import { useAccount, useDisconnect } from "wagmi";
@@ -25,6 +27,11 @@ export default function Home() {
           );
         })()}
       </div>
+      
+       <Play />
+      
     </>
   );
 }
+
+export default page
