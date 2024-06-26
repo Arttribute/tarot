@@ -11,7 +11,7 @@ const Share: React.FC<ShareProps> = ({ onNewReading }) => {
         <h1 className="text-3xl font-bold mb-4">Enjoyed the game?</h1>
         <div className="flex justify-center items-center">
           <button
-            className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out"
+            className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out"
             onClick={onNewReading}
           >
             Get New Reading

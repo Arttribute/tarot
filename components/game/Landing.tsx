@@ -1,5 +1,6 @@
 import React from 'react';
 import CardStack from './CardStack'; // Adjust the import path as necessary
+import '../game/Styles/Animations.css';
 
 interface LandingProps {
     onNext: () => void;

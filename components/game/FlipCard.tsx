@@ -1,42 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import '../game/Styles/FlipCard.css';
+import '../game/Styles/CardStack.css';
 
 interface FlipCardProps {
-    title: string;
-    imageUrl: string;
-    description: string;
-
-    buttonText: string;
-    onButtonClick: () => void;
+  backTitle: string;
+  frontTitle: string;
+  buttonText: string;
+  imageUrl: string;
+  onButtonClick: () => void;
 }
 
 const FlipCard: React.FC<FlipCardProps> = ({
-    title,
-    imageUrl,
-    description,
-   
-    buttonText,
-    onButtonClick,
+  backTitle,
+  frontTitle,
+  buttonText,
+  imageUrl,
+  onButtonClick,
 }) => {
-    return (
-        <div className="w-[300px] h-[420px] bg-transparent cursor-pointer perspective">
-            <div className="relative w-full h-full transition-transform duration-1000 transform group" onClick={() => {}}>
-               
-                <div className="absolute my-rotate-y-180 w-full h-full bg-white rounded-lg shadow-lg backface-hidden" style={{ backgroundImage: `url('')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                    <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 p-6">
-                        <h1 className="text-2xl font-bold mb-2">{title}</h1>
-                        
-                        <p className="mb-6">{description}</p>
-                        <button
-                            className="bg-pink-500 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-10 delay-500 duration-1000 group-hover:bottom-6 scale-0 group-hover:scale-100"
-                            onClick={onButtonClick}
-                        >
-                            {buttonText}
-                        </button>
-                    </div>
-                </div>
+  const [isFlipped, setIsFlipped] = useState(true);
+
+  const flipCard = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  return (
+    <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
+      <div className="flip-card-inner custom-background top-4 rounded-lg p-1 flex flex-col justify-center items-center">
+        <div className='flex justify-center flex-col items-center bg-white h-72 w-44 border-2 border-black p-2'>
+          <div className="image-container">
+            <img src={imageUrl} alt={frontTitle} />
+            <div className='overlay'>
+              <h3 className='title'>{frontTitle}</h3>
             </div>
+            <div className='button-container'>
+              <button className='button' onClick={(e) => { e.stopPropagation(); onButtonClick(); }}>{buttonText}</button>
+            </div>
+          </div>
         </div>
-    );
+
+        <div className="flip-card-back custom-background border-2 border-black">
+          <div className='custom-background border-2 border-white h-[16.5rem]'>
+            <div className='flex flex-col items-center justify-center h-[16.5rem] text-white'>
+              <h1 className='text-3xl font-semibold'>{backTitle}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default FlipCard;
