@@ -107,6 +107,81 @@
     /* Orange background color */
   }
 
+  .custom-background {
+    margin: 1rem;
+    border-radius: 12px;
+    background-color: #1a237e;
+    background-image: linear-gradient(30deg,
+        #f74581 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #f74581 87.5%,
+        #f74581),
+      linear-gradient(150deg,
+        #f74581 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #f74581 87.5%,
+        #f74581),
+      linear-gradient(30deg,
+        #f74581 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #f74581 87.5%,
+        #f74581),
+      linear-gradient(150deg,
+        #f74581 12%,
+        transparent 12.5%,
+        transparent 87%,
+        #f74581 87.5%,
+        #f74581),
+      linear-gradient(60deg,
+        #f7458177 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #f7458177 75%,
+        #f7458177),
+      linear-gradient(60deg,
+        #f7458177 25%,
+        transparent 25.5%,
+        transparent 75%,
+        #f7458177 75%,
+        #f7458177);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 72px, 40px 72px, 0 0, 40px 72px;
+  }
+
+  .card-stack {
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+  }
+
+  .card-stack .card {
+    position: absolute;
+    width: 15rem;
+    height: 22rem;
+    border-radius: 12px;
+    border-color: white;
+    border-width: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card-stack .card:nth-child(1) {
+    transform: translate(10px, -10px) translateZ(0px) rotateY(0deg);
+  }
+  
+  .card-stack .card:nth-child(2) {
+    transform: translate(20px, -20px) translateZ(-20px) rotateY(0deg);
+  }
+  
+  .card-stack .card:nth-child(3) {
+    transform: translate(30px, -30px) translateZ(-40px) rotateY(0deg);
+  }
+
+
+
   * {
     @apply border-border;
   }
@@ -114,4 +189,131 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* styles.css or globals.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.word-heading {
+  animation-delay: 0s;
+}
+
+.word-paragraph{
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.4s; /* Adjust delay as needed */
+}
+
+.word-paragraph:nth-child(1) {
+  animation-delay: 1.4s;
+}
+
+.word-paragraph:nth-child(2) {
+  animation-delay: 1.6s;
+}
+
+.word-paragraph:nth-child(3) {
+  animation-delay: 1.8s;
+}
+
+.word-paragraph:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.word-paragraph:nth-child(5) {
+  animation-delay: 2.2s;
+}
+
+.word-paragraph:nth-child(6) {
+  animation-delay: 2.4s;
+}
+
+.word-paragraph:nth-child(7) {
+  animation-delay: 2.6s;
+}
+
+.word-paragraph:nth-child(8) {
+  animation-delay: 2.8s;
+}
+
+.word-paragraph:nth-child(9) {
+  animation-delay: 3s;
+}
+
+.word-paragraph:nth-child(10) {
+  animation-delay: 3.2s;
+}
+
+.word-paragraph:nth-child(11) {
+  animation-delay: 3.4s;
+}
+
+.word-paragraph:nth-child(12) {
+  animation-delay: 3.6s;
+}
+
+.word-paragraph:nth-child(13) {
+  animation-delay: 3.8s;
+}
+
+
+.word:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.word:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.word:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.word:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.word:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.word:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.word:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.word:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.word:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+.word:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+.word:nth-child(11) {
+  animation-delay: 2.0s;
+}
+
+
+
 }

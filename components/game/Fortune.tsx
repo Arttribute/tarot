@@ -109,10 +109,10 @@ const Fortune: React.FC<FortuneProps> = ({ onNext }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-12">
-      <div className="text-center mb-10 mt-16">
+      <div className="text-center mb-8 top-[-20px]">
         <h1 className="text-3xl font-bold">Select a card</h1>
       </div>
-      <div className="flex flex-row justify-center gap-8 mb-12">
+      <div className="flex flex-row justify-center gap-8 mb-8">
         {cardOptions.map((card) => (
           <div
             key={card.id}
