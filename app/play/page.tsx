@@ -13,13 +13,16 @@ const Play: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'story':
-        return <Story onNext={() => setCurrentPage('shuffle')} />;
+        return <Story onNext={() => setCurrentPage('shuffle')} onBack={() => setCurrentPage('landing')} />;
       case 'shuffle':
-        return <Shuffle onNext={() => setCurrentPage('fortune')} />;
+        return <Shuffle onNext={() => setCurrentPage('fortune')} onBack={() => setCurrentPage('story')} />;
+
       case 'fortune':
-        return <Fortune onNext={() => setCurrentPage('share')} />;
+        return <Fortune onNext={() => setCurrentPage('share')} onBack={() => setCurrentPage('shuffle')}/>;
+     
       case 'share':
         return <Share onNewReading={() => setCurrentPage('landing')} />;
+      //onBack={() => setCurrentPage('fortune')} 
       case 'about':
         return <About />;
       default:
