@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@coinbase/onchainkit": "^0.22.2",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@hookform/resolvers": "^3.6.0",
     "@openzeppelin/contracts": "^5.0.2",
     "@radix-ui/react-avatar": "^1.1.0",
