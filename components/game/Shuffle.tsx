@@ -103,7 +103,7 @@ const Shuffle: React.FC<ShuffleProps> = ({ onNext, onBack }) => {
                 if (el && !cardRefs.current.includes(el))
                   cardRefs.current[index] = el;
               }}
-              className="absolute custom-background w-60 h-[22rem] border-black border-2 rounded-lg overflow-hidden"
+              className="absolute custom-background w-60 h-[22rem]  border border-white rounded-xl overflow-hidden"
               style={{ top: 0, left: 0 }}
             >
               {" "}
