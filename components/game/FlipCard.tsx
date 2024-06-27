@@ -28,12 +28,16 @@ const FlipCard: React.FC<FlipCardProps> = ({
       className={`flip-card ${isFlipped ? "flipped" : ""}`}
       onClick={flipCard}
     >
-      <div className="flip-card-inner custom-background rounded-xl flex flex-col justify-center items-center p-3">
-        <div className="flex justify-center flex-col items-center bg-white border rounded-xl p-0.5">
+      <div className="flip-card-inner bg-white rounded-2xl flex flex-col justify-center items-center shadow-xl">
+        <div className="flex justify-center flex-col items-center rounded-xl p-1">
           <div className="image-container rounded-xl">
-            <img src={imageUrl} alt={frontTitle} />
+            <img
+              src={imageUrl}
+              alt={frontTitle}
+              className="aspect-[6/9] rounded-xl"
+            />
             <div className="overlay">
-              <h3 className="title">{frontTitle}</h3>
+              <h3 className="text-sm text-white font-semibold">{frontTitle}</h3>
             </div>
             <div className="button-container">
               <button
