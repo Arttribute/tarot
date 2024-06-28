@@ -12,11 +12,12 @@ const Play: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<string>("landing");
   const [input, setInput] = useState<string>("Give me a tarot reading");
   const [loadingReading, setLoadingReading] = useState<boolean>(false);
-  const [reading, setReading] = useState<any>({});
+  const [startReading, setStartReading] = useState<boolean>(false);
   const [readingImages, setReadingImages] = useState<string[]>([]);
   const [cardContents, setCardContents] = useState<any[]>([]);
 
   async function generateCards() {
+    setStartReading(true);
     setLoadingReading(true);
     console.log("Input:", input);
     try {
@@ -32,7 +33,6 @@ const Play: React.FC = () => {
       const result = await response.json();
 
       await generateImages(result);
-      setReading(result);
       console.log("Prompt result:", result);
       //map the results and image to cardContents and setCardContents
       const cardContents = Object.keys(result).map((key) => {
@@ -112,8 +112,27 @@ const Play: React.FC = () => {
 
   return (
     <div>
-      {renderPage()}
-      <Button onClick={generateCards}>Generate Cards</Button>
+      {!startReading && (
+        <div onClick={generateCards}>
+          <Story
+            onNext={() => setCurrentPage("shuffle")}
+            onBack={() => setCurrentPage("landing")}
+          />
+        </div>
+      )}
+      {startReading && loadingReading && (
+        <Shuffle
+          onNext={() => setCurrentPage("fortune")}
+          onBack={() => setCurrentPage("story")}
+        />
+      )}
+      {startReading && !loadingReading && (
+        <Fortune
+          onNext={() => setCurrentPage("share")}
+          onBack={() => setCurrentPage("shuffle")}
+          cardContents={cardContents}
+        />
+      )}
     </div>
   );
 };
