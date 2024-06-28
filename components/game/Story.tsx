@@ -14,7 +14,7 @@ const Story: React.FC<StoryProps> = ({ onNext, onBack }) => {
   // animating the text
   const heading = "This is the Tarot deck.";
   const paragraph =
-    "40 cards that can tell you of your past, present and future";
+    "Unique cards that can tell you of your past, present and future";
   const sentence = "~ Click on the deck to continue ~";
   const wordsContinue = sentence.split(" ");
   const wordsHeading = heading.split(" ");
