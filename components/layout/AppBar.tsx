@@ -10,7 +10,7 @@ export default function AppBar() {
         <MenubarMenu>
           <div className=" lg:hidden"></div>
           <MenubarTrigger>
-            <Logo text="AI Tarot" />
+            <Logo text="tarot" />
           </MenubarTrigger>
         </MenubarMenu>
         <div className="grow" />
