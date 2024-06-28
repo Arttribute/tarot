@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FlipCard from "./FlipCard";
 import Modal from "./Modal";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "@/components/ui/button";
 
 interface FortuneProps {
   onNext: () => void;
@@ -34,17 +33,9 @@ const Fortune: React.FC<FortuneProps> = ({ onNext, onBack, cardContents }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-12">
-      <div className="absolute top-20 left-36">
-        <button
-          onClick={onBack}
-          className="flex flex-col float-left justify-center items-center  w-14 h-14 bg-gray-400 text-white px-4 py-2 rounded-full transform transition-transform duration-300 ease-in-out hover:scale-105"
-        >
-          <FontAwesomeIcon icon={faArrowLeft} className="text-2xl" />
-        </button>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen py-12 bg-gradient-to-br from-blue-400 to-purple-600">
       <div className="text-center mb-8 top-[-20px]">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-xl font-semibold text-white">
           {wordsHeading.map((word, index) => (
             <span key={index} className={`word word-heading-shuffle`}>
               {word}&nbsp;
@@ -72,12 +63,9 @@ const Fortune: React.FC<FortuneProps> = ({ onNext, onBack, cardContents }) => {
         ))}
       </div>
       <div>
-        <button
-          onClick={onNext}
-          className="relative w-40 bg-slate-500 hover:bg-slate-600 text-white py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out top-10"
-        >
-          Next
-        </button>
+        <Button onClick={onNext} className="px-24">
+          Leave
+        </Button>
       </div>
 
       <Modal

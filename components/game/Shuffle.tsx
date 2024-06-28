@@ -2,8 +2,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { Card } from "../ui/card";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../game/Styles/Animations.css";
 
 interface ShuffleProps {
@@ -68,23 +66,15 @@ const Shuffle: React.FC<ShuffleProps> = ({ onNext, onBack }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-400 to-purple-600">
-      <div className="absolute top-20 left-36">
-        <button
-          onClick={onBack}
-          className="flex items-center justify-center w-14 h-14 bg-gray-400 text-white px-4 py-2 rounded-full transform transition-transform duration-300 ease-in-out hover:scale-110"
-        >
-          <FontAwesomeIcon icon={faArrowLeft} className="text-2xl" />
-        </button>
-      </div>
       <div className="relative text-center p-2 rounded-lg top-[-190px]">
-        <h1 className="text-xl font-bold mb-2">
+        <h1 className="text-xl font-bold mb-2 text-white">
           {wordsHeadingShuffle.map((word, index) => (
             <span key={index} className={`word word-heading-shuffle`}>
               {word}&nbsp;
             </span>
           ))}
         </h1>
-        <p className="text-sm mb-8">
+        <p className="text-sm mb-8 text-white">
           {wordsParagraphShuffle.map((word, index) => (
             <span key={index} className={`word-paragraph`}>
               {word}&nbsp;

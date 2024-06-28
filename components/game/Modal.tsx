@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
-import Image from "next/image";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 interface ModalProps {
   title: string;
@@ -36,12 +36,9 @@ const Modal: React.FC<ModalProps> = ({
               <h2 className="text-2xl font-semibold mb-4">{title}</h2>
 
               <p className="text-sm mb-4">{description}</p>
-              <button
-                onClick={onClose}
-                className="w-full bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out"
-              >
+              <Button onClick={onClose} className="w-full">
                 Mint
-              </button>
+              </Button>
             </div>
           </div>
         </div>
