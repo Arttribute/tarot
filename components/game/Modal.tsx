@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { ethers } from "ethers";
+import { TarotABI } from "@/lib/abi/TarotABI";
+import Web3Modal from "web3modal";
 
 interface ModalProps {
   title: string;
@@ -19,6 +22,17 @@ const Modal: React.FC<ModalProps> = ({
   open,
   timePeriod,
 }) => {
+  async function mintCard() {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.BrowserProvider(connection);
+    const signer = await provider.getSigner();
+    const TarotAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const address = await signer.getAddress();
+    const TarotContract = new ethers.Contract(TarotAddress, TarotABI, signer);
+    const tokenUri = "https://mosaicsnft.com/api/metadata/1";
+    await TarotContract.mintCertificate(address, tokenUri);
+  }
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl">
@@ -36,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({
               <h2 className="text-2xl font-semibold mb-4">{title}</h2>
 
               <p className="text-sm mb-4">{description}</p>
-              <Button onClick={onClose} className="w-full">
+              <Button onClick={mintCard} className="w-full">
                 Mint
               </Button>
             </div>

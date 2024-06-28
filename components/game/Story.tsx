@@ -15,7 +15,7 @@ const Story: React.FC<StoryProps> = ({ onNext, onBack }) => {
   const heading = "This is the Tarot deck.";
   const paragraph =
     "Unique cards that can tell you of your past, present and future";
-  const sentence = "~ Click on the deck to continue ~";
+  const sentence = "~ Click the deck to continue ~";
   const wordsContinue = sentence.split(" ");
   const wordsHeading = heading.split(" ");
   const wordsParagraph = paragraph.split(" ");
