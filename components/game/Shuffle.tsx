@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+"use client";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { Card, CardHeader, CardTitle } from "../ui/card";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -21,8 +22,11 @@ const Shuffle: React.FC<ShuffleProps> = ({ onNext, onBack }) => {
 
   const cardRefs = useRef<HTMLDivElement[]>([]);
 
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
   const shuffleCards = () => {
-    // Implementing the stacking animation logic
     gsap.fromTo(
       cardRefs.current,
       {
@@ -63,12 +67,8 @@ const Shuffle: React.FC<ShuffleProps> = ({ onNext, onBack }) => {
     );
   };
 
-  const handleCardClick = () => {
-    onNext(); // Trigger the same action as the button click
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen ">
       <div className="absolute top-20 left-36">
         <button
           onClick={onBack}
@@ -111,24 +111,6 @@ const Shuffle: React.FC<ShuffleProps> = ({ onNext, onBack }) => {
             </Card>
           ))}
         </div>
-      </div>
-
-      <div className="relative text-center top-[175px]">
-        <p className="text-xl font-semibold">
-          {wordsContinueShuffle.map((word, index) => (
-            <span key={index} className={`word-continue-shuffle`}>
-              {word}&nbsp;
-            </span>
-          ))}
-        </p>
-      </div>
-      <div className="relative top-[185px]">
-        <button
-          onClick={onNext}
-          className="top-80 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out"
-        >
-          End Shuffle
-        </button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ShareProps {
   onNewReading: () => void;
@@ -6,7 +6,7 @@ interface ShareProps {
 
 const Share: React.FC<ShareProps> = ({ onNewReading }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="text-center max-w-md p-8 bg-white rounded-lg shadow-md">
         <h1 className="text-3xl font-bold mb-4">Enjoyed the game?</h1>
         <div className="flex justify-center items-center">

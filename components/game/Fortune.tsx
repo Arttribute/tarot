@@ -34,7 +34,7 @@ const Fortune: React.FC<FortuneProps> = ({ onNext, onBack, cardContents }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-12">
+    <div className="flex flex-col items-center justify-center min-h-screen py-12">
       <div className="absolute top-20 left-36">
         <button
           onClick={onBack}
