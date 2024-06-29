@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Chakra_Petch } from "next/font/google";
 import "./globals.css";
-import OnchainProviders from "@/components/providers/OnchainProviders";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const chakra_petch = Chakra_Petch({
   weight: ["300", "400", "500", "600"],
