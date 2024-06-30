@@ -1,6 +1,6 @@
 "use client";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-
+import { CreateWalletButton } from "@/components/account/ CreateWalletButton";
 import { Logo } from "@/components/layout/logo";
 
 export default function AppBar() {
@@ -14,6 +14,7 @@ export default function AppBar() {
           </MenubarTrigger>
         </MenubarMenu>
         <div className="grow" />
+        <CreateWalletButton />
       </Menubar>
     </div>
   );

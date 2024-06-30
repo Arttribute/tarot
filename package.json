@@ -38,10 +38,11 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
+    "siwe": "^2.3.2",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "viem": "^2.16.2",
-    "wagmi": "^1.4.13",
+    "wagmi": "^2.9.5",
     "web3modal": "^1.9.12",
     "zod": "^3.23.8"
   },
