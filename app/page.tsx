@@ -7,7 +7,6 @@ import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <>
       <AppBar />
@@ -17,10 +16,10 @@ export default function Home() {
             <div className="text-center ">
               <div className="flex flex-col items-center justify-center  ">
                 <div className="flex">
-                  <div className="text-7xl font-bold mb-4 bg-gradient-to-r py-2 from-orange-500 to-indigo-500 bg-clip-text text-transparent">
+                  <div className="text-7xl font-bold mb-4 bg-gradient-to-r py-2 from-blue-500 to-purple-500 bg-clip-text text-transparent">
                     tarot
                   </div>
-                  <Sparkles className="w-10 h-10 text-indigo-500 text-xs mt-2 font-bold" />
+                  <Sparkles className="w-10 h-10 text-purple-500 text-xs mt-2 font-bold" />
                 </div>
               </div>
 
